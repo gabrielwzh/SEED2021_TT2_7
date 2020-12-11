@@ -35,7 +35,10 @@ export class Account extends Component {
       const url = 'https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020'
   
       axios.post(url + "/accounts/view", data, header )
-        .then(res => { console.log(res); 
+        .then(res => { console.log('Data fetched', res)
+            this.setState({
+              data: res
+            })
           
         })
         .catch(err =>  { console.log(err.response)
@@ -43,6 +46,7 @@ export class Account extends Component {
           //   message: err.response.data.error,
           //   invalidLogin: true
           // })
+
         
         })
       }
@@ -58,7 +62,7 @@ export class Account extends Component {
               <div className='form-group' style={{ margin: '0px' }}>
                 <div className='form-group'>
                 <label>Customer ID: </label>
-                <input className='form-control' type="text" value={custID} onChange={this.handleChangeCustID}/>
+                <input className='form-control' type="int" value={custID} onChange={this.handleChangeCustID}/>
                 <span>{accountName}</span> 
                 <span>{accountNumber}</span>
                 <span>{availableBal}</span>
