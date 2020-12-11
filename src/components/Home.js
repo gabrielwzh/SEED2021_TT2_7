@@ -21,7 +21,7 @@ export class Home extends Component {
                         <div className="banner-text">
                             <h2>Welcome to Team7 Pay!</h2>
                             <ReactTypingEffect
-                                text="The world's best air wallet."
+                                text="The world's best e-wallet."
                                 className="typing"
                                 speed="100"
                                 eraseDelay="9999999999999"
