@@ -79,9 +79,9 @@ export class App extends Component {
               <Route path="/" exact component={() => <Home user={this.state.user}/>}/>
               <Route path="/login" exact component={() => 
                 <Login setUser={this.setUser} setAuth={this.setAuth} startTimer={this.startTimer}/>}/>
-                <Route path="/account" exact component={Account }/>
-                <Route path="/transfer" exact component={Transfer}/>
-                <Route path="/history" exact component={History}/>
+                <Route path="/account" exact component={() => <Account user={this.state.user}/>}/>
+                <Route path="/transfer" exact component={() => <Transfer user={this.state.user}/>}/>
+                <Route path="/history" exact component={() => <History user={this.state.user}/>}/>
               </Switch>
           </div>
         </div>
