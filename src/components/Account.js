@@ -1,25 +1,19 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
-<<<<<<< HEAD
-=======
-import '../App.css';
->>>>>>> 15cecab6377dbadd93e62df95e04d5c21b0961a4
+import axios from 'axios'
 
-export class History extends Component {
+export class Account extends Component {
 
   constructor (props) {
     super(props)
 
     this.state = {
-      eGift: '',
-      dateTime: '',
-      expensesCat: '',
-      amount: '',
-      message: '',
-      payeeID: '',
-      data: [],
-      isLoading: false,
+      custID: '',
+      accountName: '',
+      accountNumber: '',
+      availableBal: '',
+      linked: '',
+      data: []
     }
   }
 
@@ -41,7 +35,7 @@ export class History extends Component {
     }
     const url = 'https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020'
 
-    axios.post(url + "/transaction/view", data, header)
+    axios.post(url + "/accounts/view", data, header)
       .then(res => {
         console.log('Data fetched', res)
         this.setState({
@@ -49,7 +43,6 @@ export class History extends Component {
           data: res.data
         })
       })
-
       .catch(err => {
         console.log(err.response)
         // this.setState({
@@ -57,54 +50,38 @@ export class History extends Component {
         //   invalidLogin: true
         // })
 
+
       })
   }
 
-
   render() {
 
-    const { custID } = this.state
+    const { custID, accountName, accountNumber, availableBal, linked } = this.state
+
     if (this.props.user) {
       return (
         <div>
-          <h4> Transaction History </h4>
+          <h4> Registration</h4>
           <div className='form-group' style={{ margin: '0px' }}>
-            <label>Customer ID: </label>
-            <input className='form-control' type="number" min='0' value={custID} onChange={this.handleChangeCustID} />
-
-            <div>
-              <h4> Transaction History </h4>
-              <div className='form-group' style={{ margin: '0px' }}>
-                <label>Customer ID: </label>
-                <input className='form-control' type="number" min='0' value={custID} onChange={this.handleChangeCustID} />
-
-
-              </div>
-              <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                <button className='btn btn-light btn-md' style={{ width: '150px' }} onClick={this.handleSubmit}>Submit</button>
-              </div>
-
-              <br />
-
+            <div className='form-group'>
+              <label>Customer ID: </label>
+              <input className='form-control' type="int" value={this.state.custID} onChange={this.handleChangeCustID} />
+              
               <div>
-                <table>
+                <table className="accounts-table">
                   <thead>
                     <tr>
-                      <th align="right">Date / Time</th>
-                      <th align="right">Payee Id</th>
-                      <th align="right">Amount</th>
-                      <th align="left">Expenses Cat</th>
-                      <th align="left">Message</th>
+                      <th align="right">Account Name</th>
+                      <th align="right">Account Number</th>
+                      <th align="right">Available Balance</th>
                     </tr>
                   </thead>
                   <tbody>
                     {this.state.data.map((elem, idx) => (
                       <tr key={idx}>
-                        <th align="left">{elem.dateTime}</th>
-                        <th scope="left">{elem.payeeID}</th>
-                        <th scope="left">{elem.amount}</th>
-                        <th align="left">{elem.expensesCat}</th>
-                        <th align="left">{elem.message}</th>
+                        <th scope="row">{elem.accountName}</th>
+                        <th align="right">{elem.accountNumber}</th>
+                        <th align="right">{elem.availableBal}</th>
                       </tr>
                     ))}
                   </tbody>
@@ -112,15 +89,11 @@ export class History extends Component {
               </div>
 
             </div>
-
-
           </div>
           <div style={{ textAlign: 'center', marginTop: '30px' }}>
             <button className='btn btn-light btn-md' style={{ width: '150px' }} onClick={this.handleSubmit}>Submit</button>
           </div>
         </div>
-
-
       )
     } else {
       return (
@@ -133,4 +106,4 @@ export class History extends Component {
   }
 }
 
-export default History
+export default Account;
