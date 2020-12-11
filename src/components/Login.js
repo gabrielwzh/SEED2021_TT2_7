@@ -57,10 +57,10 @@ export class Login extends Component {
         
       })
       .catch(err =>  { console.log(err.response)
-        this.setState({
-          message: err.response.data.error,
-          invalidLogin: true
-        })
+        // this.setState({
+        //   message: err.response.data.error,
+        //   invalidLogin: true
+        // })
       
       })
     }
