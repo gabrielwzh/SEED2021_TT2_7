@@ -65,8 +65,8 @@ export class Account extends Component {
           <div className='form-group' style={{ margin: '0px' }}>
             <div className='form-group'>
               <label>Customer ID: </label>
-              <input className='form-control' type="int" value={custID} onChange={this.handleChangeCustID} />
-
+              <input className='form-control' type="int" value={this.state.custID} onChange={this.handleChangeCustID} />
+              
               <div>
                 <table className="accounts-table">
                   <thead>
