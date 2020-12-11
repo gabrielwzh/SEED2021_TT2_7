@@ -10,18 +10,13 @@
   justify-content: center;
   align-items: center;
   background-color: #258EA6;
+  
 }
 
 .form-wrapper {
   min-width: 400px;
   max-height: 400px;
   display: flex;
-  position:fixed;
-  overflow:auto;
-}
-
-.form-wrapper {
-  display: block;
   flex-direction: column;
   padding: 20px 40px;
   border-radius: 10px;
