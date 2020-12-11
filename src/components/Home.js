@@ -27,9 +27,6 @@ export class Home extends Component {
                                 eraseDelay="9999999999999"
 
                             />
-
-                            <button type="Login">Login</button>
-
                             
 
                             <br></br><br></br>
