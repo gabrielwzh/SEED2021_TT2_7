@@ -67,6 +67,9 @@ export class Account extends Component {
                 <label>Customer ID: </label>
                 <input className='form-control' type="number" min='0' value={custID} onChange={this.handleChangeCustID}/>
                 <span>{this.state.data.map((elem) => elem.accountName)}</span> 
+                <span>{this.state.data.map((elem) => elem.accountNumber)}</span> 
+                <span>{this.state.data.map((elem) => elem.availableBal)}</span> 
+                <span>{this.state.data.map((elem) => elem.linked)}</span> 
                 </div>
               </div>
               <div style={{textAlign: 'center', marginTop: '30px'}}>
