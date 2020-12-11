@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import logo from '../logo.svg'
+import logo from '../DBSLogo.png'
 import { Link } from 'react-router-dom'
+import './Login.css'
 
 export class Nav extends Component {
 
@@ -71,7 +72,7 @@ export class Nav extends Component {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div className="container">
             <Link to="/" className="navbar-brand">
-              <img src={logo} width="50" height="50" alt="react logo"/>
+              <img src={logo} width="100" alt="dbs logo"/>
             </Link>
               <Link to="/account" className="navbar-brand">Account</Link>
               <Link to="/transfer" className="navbar-brand">Transfer</Link>

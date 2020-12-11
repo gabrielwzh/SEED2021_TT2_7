@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import './Login.css'
 import axios from 'axios'
 
+
 export class Login extends Component {
 
     constructor(props) {
@@ -15,8 +16,6 @@ export class Login extends Component {
         isChecked: false
       }
     }
-
-
 
     handleChangeUsername = async event => {
       const username = event.target.value
@@ -77,8 +76,6 @@ export class Login extends Component {
         })
     }
  
-
-
     render() {
 
       if(this.state.loggedIn) {
@@ -105,22 +102,25 @@ export class Login extends Component {
       const { username, password, isChecked } = this.state
 
       return(
-        <div>
+        <div class ='form-group'>
             <h2>Login</h2>
             {error}
-          <div className='form-group' style={{ margin: '10px 10px' }}>
-            <label>Username: </label>
+          
+            <label class="form-label">Username: </label>
             <input className='form-control' type="text" value={username} onChange={this.handleChangeUsername} placeholder='Username'/>
-          </div>
-          <div className='form-group' style={{ margin: '10px 10px' }}>
+        
+          
             <label>Password: </label>
             <input className='form-control' type="password" value={password} onChange={this.handleChangePassword} placeholder='Password'/>
-          </div>
-          <input type="checkbox" checked={isChecked} onChange={this.onChangeCheckbox} />
-          <label>Remember me</label>
+        
+          <label> 
+          <input className="checkbox" type="checkbox" checked={isChecked} onChange={this.onChangeCheckbox} />
+          Remember Me
+          </label>
           <button className='btn btn-primary btn-block' onClick={this.handleLogin}>Login</button>
 
         </div>
+
       )
     }
 }
