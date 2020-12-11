@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 
+
 export class Account extends Component {
 
     constructor(props) {
@@ -12,7 +13,10 @@ export class Account extends Component {
             accountName: '',
             accountNumber: '',
             availableBal: '',
-            linked: ''
+            linked: '',
+            data: [],
+            columns: [],
+            isLoading: false,
         }
       }
 
@@ -36,7 +40,11 @@ export class Account extends Component {
   
       axios.post(url + "/accounts/view", data, header )
         .then(res => { console.log(res); 
-          
+            this.setState({
+                data: res.data,
+                isLoading: false,
+            });
+
         })
         .catch(err =>  { console.log(err.response)
           // this.setState({
@@ -49,20 +57,16 @@ export class Account extends Component {
 
     render() {
 
-        const { custID, accountName, accountNumber, availableBal, linked } = this.state
-
+        const { custID } = this.state
         if(this.props.user) {
             return ( 
             <div>
-            <h4> Registration</h4>
+            <h4> Account Summary </h4>
               <div className='form-group' style={{ margin: '0px' }}>
                 <div className='form-group'>
                 <label>Customer ID: </label>
-                <input className='form-control' type="text" value={custID} onChange={this.handleChangeCustID}/>
-                <span>{accountName}</span> 
-                <span>{accountNumber}</span>
-                <span>{availableBal}</span>
-                <span>{linked}</span>
+                <input className='form-control' type="number" min='0' value={custID} onChange={this.handleChangeCustID}/>
+                <span>{this.state.data.map((elem) => elem.accountName)}</span> 
                 </div>
               </div>
               <div style={{textAlign: 'center', marginTop: '30px'}}>

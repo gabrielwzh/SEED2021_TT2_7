@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export class Transfer extends Component {
 
+
     render() {
         if(this.props.user) {
             return ( 

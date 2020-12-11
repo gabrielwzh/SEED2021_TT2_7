@@ -17,6 +17,16 @@ export class Login extends Component {
       }
     }
 
+    componentDidMount() {
+      if(localStorage.getItem('username') !== null) {
+        this.setState({
+          username: localStorage.getItem('username'),
+          password: localStorage.getItem('password'),
+          isChecked: true
+        })
+      }
+    }
+
     handleChangeUsername = async event => {
       const username = event.target.value
       this.setState({ username })
@@ -45,14 +55,23 @@ export class Login extends Component {
 
     axios.post(url + "/login", payload, header )
       .then(res => { console.log(res); 
-        sessionStorage.setItem('username', payload.username)
+        console.log(res.data.firstName)
+        sessionStorage.setItem('username', res.data.firstName)
         sessionStorage.setItem('auth', true)
+        sessionStorage.setItem('custID', res.data.custID)
         this.setState({
-          loggedIn: true
+          loggedIn: true,
         })
         this.props.setUser(payload.username)
         this.props.setAuth(true)
         this.props.startTimer()
+
+        if(this.state.isChecked) {
+          localStorage.setItem('username', username);
+          localStorage.setItem('password', password);
+        } else {
+          localStorage.clear();
+        }
         
       })
       .catch(err =>  { console.log(err.response)
@@ -102,17 +121,16 @@ export class Login extends Component {
       const { username, password, isChecked } = this.state
 
       return(
-        <div class ='form-group'>
+        <div className ='form-group'>
             <h2>Login</h2>
             {error}
           
-            <label class="form-label">Username: </label>
+            <label className="form-label">Username: </label>
             <input className='form-control' type="text" value={username} onChange={this.handleChangeUsername} placeholder='Username'/>
         
           
             <label>Password: </label>
             <input className='form-control' type="password" value={password} onChange={this.handleChangePassword} placeholder='Password'/>
-        
           <label> 
           <input className="checkbox" type="checkbox" checked={isChecked} onChange={this.onChangeCheckbox} />
           Remember Me
