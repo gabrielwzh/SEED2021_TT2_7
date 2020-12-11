@@ -50,7 +50,6 @@ export class Account extends Component {
         //   invalidLogin: true
         // })
 
-
       })
   }
 
