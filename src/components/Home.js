@@ -23,7 +23,7 @@ export class Home extends Component {
                             <ReactTypingEffect
                                 text="The world's best air wallet."
                                 className="typing"
-                                speed="400"
+                                speed="100"
                                 eraseDelay="9999999999999"
 
                             />
