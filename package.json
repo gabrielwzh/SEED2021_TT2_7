@@ -17,11 +17,7 @@
     "react-icons": "^4.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
-<<<<<<< HEAD
-    "react-table": "^7.6.2"
-=======
     "react-typing-effect": "^2.0.4"
->>>>>>> 0f9379ccc11506a7547fe5f9f4aaf006a42a6f7e
   },
   "scripts": {
     "start": "react-scripts start",
