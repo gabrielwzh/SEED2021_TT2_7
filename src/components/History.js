@@ -67,9 +67,17 @@ export class History extends Component {
               <div className='form-group' style={{ margin: '0px' }}>
                 <label>Customer ID: </label>
                 <input className='form-control' type="number" min='0' value={custID} onChange={this.handleChangeCustID}/>
+            
               
-                <div>
-                <table className="accounts-table">
+              </div>
+              <div style={{textAlign: 'center', marginTop: '30px'}}>
+              <button className='btn btn-light btn-md' style={{width: '150px'}} onClick={this.handleSubmit}>Submit</button>
+              </div>
+
+              <br />
+
+              <div>
+                <table>
                   <thead>
                     <tr>
                       <th align="right">Date / Time</th>
@@ -92,12 +100,7 @@ export class History extends Component {
                   </tbody>
                 </table>
               </div>
-            
-              
-              </div>
-              <div style={{textAlign: 'center', marginTop: '30px'}}>
-              <button className='btn btn-light btn-md' style={{width: '150px'}} onClick={this.handleSubmit}>Submit</button>
-              </div>
+
             </div>
 
             
