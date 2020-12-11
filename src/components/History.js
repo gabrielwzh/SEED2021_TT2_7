@@ -70,28 +70,44 @@ export class History extends Component {
             <input className='form-control' type="number" min='0' value={custID} onChange={this.handleChangeCustID} />
 
             <div>
-              <table className="accounts-table">
-                <thead>
-                  <tr>
-                    <th align="right">Date / Time</th>
-                    <th align="right">Payee Id</th>
-                    <th align="right">Amount</th>
-                    <th align="left">Expenses Cat</th>
-                    <th align="left">Message</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.data.map((elem, idx) => (
-                    <tr key={idx}>
-                      <th align="left">{elem.dateTime}</th>
-                      <th scope="left">{elem.payeeID}</th>
-                      <th scope="left">{elem.amount}</th>
-                      <th align="left">{elem.expensesCat}</th>
-                      <th align="left">{elem.message}</th>
+              <h4> Transaction History </h4>
+              <div className='form-group' style={{ margin: '0px' }}>
+                <label>Customer ID: </label>
+                <input className='form-control' type="number" min='0' value={custID} onChange={this.handleChangeCustID} />
+
+
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '30px' }}>
+                <button className='btn btn-light btn-md' style={{ width: '150px' }} onClick={this.handleSubmit}>Submit</button>
+              </div>
+
+              <br />
+
+              <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th align="right">Date / Time</th>
+                      <th align="right">Payee Id</th>
+                      <th align="right">Amount</th>
+                      <th align="left">Expenses Cat</th>
+                      <th align="left">Message</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {this.state.data.map((elem, idx) => (
+                      <tr key={idx}>
+                        <th align="left">{elem.dateTime}</th>
+                        <th scope="left">{elem.payeeID}</th>
+                        <th scope="left">{elem.amount}</th>
+                        <th align="left">{elem.expensesCat}</th>
+                        <th align="left">{elem.message}</th>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
             </div>
 
 
