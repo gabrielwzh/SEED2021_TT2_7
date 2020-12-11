@@ -28,21 +28,24 @@ export class Home extends Component {
 
                             />
 
-                            <p className="button">
-                                <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
-                            </p>
+                            <button type="Login">Login</button>
+
+                            
 
                             <br></br><br></br>
                             <ul className="social">
                                 <a href="https://www.facebook.com/dbs.sg/" target="_blank" rel="noopener noreferrer">
-                                    <FontAwesomeIcon className="fb fa-3x" icon={faFacebook} />
+                                    <FontAwesomeIcon className="fb fa-2x" icon={faFacebook} />
                                 </a>
+                                
 
                                 <a href="https://twitter.com/dbsbank?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
-                                    <FontAwesomeIcon className="twitter fa-3x" icon={faTwitter} />
+                                    <FontAwesomeIcon className="twitter fa-2x" icon={faTwitter} />
                                 </a>
+
+                                {'                   '}
                                 <a href="https://www.instagram.com/dbsbank/?hl=en" target="_blank" rel="noopener noreferrer">
-                                    <FontAwesomeIcon className="insta fa-3x" icon={faInstagram} />
+                                    <FontAwesomeIcon className="insta fa-2x" icon={faInstagram} />
                                 </a>
 
                             </ul>
