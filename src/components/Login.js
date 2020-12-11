@@ -48,8 +48,10 @@ export class Login extends Component {
       const header = {
         headers: {
                   'Content-Type': 'application/json',
-                  'x-api-key': 'eLQcqhBtUk9dZqxRhrCF2ahQH2TQUlXF7rlm1ug0'
-                  }
+                  'x-api-key': 'eLQcqhBtUk9dZqxRhrCF2ahQH2TQUlXF7rlm1ug0',
+                  'Access-Control-Allow-Origin' : '*',
+                  'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS' 
+                }
       }
     const url = 'https://u8fpqfk2d4.execute-api.ap-southeast-1.amazonaws.com/techtrek2020'
 

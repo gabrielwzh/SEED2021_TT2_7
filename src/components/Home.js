@@ -21,32 +21,28 @@ export class Home extends Component {
                         <div className="banner-text">
                             <h2>Welcome to Team7 Pay!</h2>
                             <ReactTypingEffect
-                                text="The world's best air wallet."
+                                text="The world's best e-wallet."
                                 className="typing"
                                 speed="100"
                                 eraseDelay="9999999999999"
-
                             />
-
-                            <button type="Login">Login</button>
-
                             
 
                             <br></br><br></br>
-                            <ul className="social">
-                                <a href="https://www.facebook.com/dbs.sg/" target="_blank" rel="noopener noreferrer">
+                            <ul className="social" style={{textAlign:'center'}} >
+                                <a  href="https://www.facebook.com/dbs.sg/" target="_blank" rel="noopener noreferrer" >
                                     <FontAwesomeIcon className="fb fa-2x" icon={faFacebook} />
-                                </a>
+                                </a>    
                                 
-
-                                <a href="https://twitter.com/dbsbank?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
+                                
+                                <a style={{ marginLeft: '50px' }}  href="https://twitter.com/dbsbank?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon className="twitter fa-2x" icon={faTwitter} />
                                 </a>
 
-                                {'                   '}
-                                <a href="https://www.instagram.com/dbsbank/?hl=en" target="_blank" rel="noopener noreferrer">
+                                <a style={{ marginLeft: '50px' }}  href="https://www.instagram.com/dbsbank/?hl=en" target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon className="insta fa-2x" icon={faInstagram} />
                                 </a>
+                                {'             '}
 
                             </ul>
 
