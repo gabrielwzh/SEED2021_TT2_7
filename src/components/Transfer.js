@@ -5,7 +5,7 @@ export class Transfer extends Component {
     render() {
         if(this.props.user) {
             return ( 
-            <h2>Hi {this.props.user} </h2> 
+            <h2>TRANSFER PAGE </h2> 
             )
         } else {
         return (
