@@ -19,25 +19,30 @@ export class Home extends Component {
 
                     <div className="row banner">
                         <div className="banner-text">
-                            <h2>Welcome to DBS</h2>
+                            <h2>Welcome to Team7 Pay!</h2>
                             <ReactTypingEffect
-                                text="Please login to your e-wallet!"
+                                text="The world's best air wallet."
                                 className="typing"
-                                speed="100"
+                                speed="400"
                                 eraseDelay="9999999999999"
+
                             />
+
+                            <p className="button">
+                                <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>
+                            </p>
 
                             <br></br><br></br>
                             <ul className="social">
                                 <a href="https://www.facebook.com/dbs.sg/" target="_blank" rel="noopener noreferrer">
-                                    <FontAwesomeIcon className="fb" icon={faFacebook} />
+                                    <FontAwesomeIcon className="fb fa-3x" icon={faFacebook} />
                                 </a>
 
                                 <a href="https://twitter.com/dbsbank?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener noreferrer">
-                                    <FontAwesomeIcon className="twitter" icon={faTwitter} />
+                                    <FontAwesomeIcon className="twitter fa-3x" icon={faTwitter} />
                                 </a>
                                 <a href="https://www.instagram.com/dbsbank/?hl=en" target="_blank" rel="noopener noreferrer">
-                                    <FontAwesomeIcon className="insta" icon={faInstagram} />
+                                    <FontAwesomeIcon className="insta fa-3x" icon={faInstagram} />
                                 </a>
 
                             </ul>
