@@ -56,9 +56,8 @@ export class Account extends Component {
 
   render() {
 
-    const { custID, accountName, accountNumber, availableBal, linked } = this.state
 
-    if (this.props.user) {
+
       return (
         <div>
           <h4> Registration</h4>
@@ -95,14 +94,6 @@ export class Account extends Component {
           </div>
         </div>
       )
-    } else {
-      return (
-        <div>
-          <h2> You're not logged in </h2>
-        </div>
-      )
-    }
-
   }
 }
 

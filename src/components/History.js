@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
-<<<<<<< HEAD
-=======
 import '../App.css';
->>>>>>> 15cecab6377dbadd93e62df95e04d5c21b0961a4
 
 export class History extends Component {
 
